@@ -1,0 +1,178 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { MessageCircle, Send, CheckCircle2 } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
+
+const objectives = [
+  { id: "emagrecer", label: "Emagrecer", emoji: "🎯" },
+  { id: "massa", label: "Ganhar Massa Muscular", emoji: "💪" },
+  { id: "saude", label: "Melhorar a Saúde", emoji: "❤️" },
+  { id: "energia", label: "Ter Mais Energia", emoji: "⚡" },
+  { id: "reeducacao", label: "Reeducação Alimentar", emoji: "🥗" },
+  { id: "outro", label: "Outro Objetivo", emoji: "✨" },
+];
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    nome: "",
+    telefone: "",
+    objetivo: "",
+    mensagem: "",
+  });
+  const [selectedObjective, setSelectedObjective] = useState<string | null>(null);
+
+  const handleObjectiveSelect = (id: string, label: string) => {
+    setSelectedObjective(id);
+    setFormData({ ...formData, objetivo: label });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.nome || !formData.telefone || !formData.objetivo) {
+      toast({
+        title: "Campos obrigatórios",
+        description: "Por favor, preencha seu nome, telefone e selecione um objetivo.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Format message for WhatsApp
+    const message = `Olá! Meu nome é ${formData.nome}.
+
+📋 *Meu objetivo:* ${formData.objetivo}
+
+${formData.mensagem ? `💬 *Mensagem:* ${formData.mensagem}` : ""}
+
+Gostaria de saber mais sobre o acompanhamento nutricional!`;
+
+    // Replace with the actual WhatsApp number
+    const whatsappNumber = "5511999999999"; // SUBSTITUA PELO NÚMERO REAL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    toast({
+      title: "Redirecionando para o WhatsApp! 📱",
+      description: "Você será direcionado para iniciar uma conversa.",
+    });
+
+    // Redirect to WhatsApp
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank");
+    }, 1000);
+  };
+
+  return (
+    <section id="cadastro" className="py-24 bg-sage-light/50">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12 space-y-4">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-primary uppercase tracking-wider">
+              <MessageCircle className="h-4 w-4" />
+              Comece sua Transformação
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold">
+              Vamos{" "}
+              <span className="text-gradient-gold italic">Conversar?</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Preencha o formulário abaixo e você será redirecionado para o WhatsApp 
+              para dar o primeiro passo rumo à sua melhor versão.
+            </p>
+          </div>
+
+          {/* Form Card */}
+          <div className="bg-card rounded-3xl shadow-elevated p-8 md:p-12 border border-border/50">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Personal Info */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="nome" className="text-base font-medium">
+                    Seu Nome *
+                  </Label>
+                  <Input
+                    id="nome"
+                    placeholder="Como posso te chamar?"
+                    value={formData.nome}
+                    onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                    className="h-12 rounded-xl border-border/60 bg-background focus:border-primary"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="telefone" className="text-base font-medium">
+                    WhatsApp *
+                  </Label>
+                  <Input
+                    id="telefone"
+                    placeholder="(00) 00000-0000"
+                    value={formData.telefone}
+                    onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
+                    className="h-12 rounded-xl border-border/60 bg-background focus:border-primary"
+                  />
+                </div>
+              </div>
+
+              {/* Objectives Selection */}
+              <div className="space-y-4">
+                <Label className="text-base font-medium">
+                  Qual seu principal objetivo? *
+                </Label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {objectives.map((obj) => (
+                    <button
+                      key={obj.id}
+                      type="button"
+                      onClick={() => handleObjectiveSelect(obj.id, obj.label)}
+                      className={`relative p-4 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-soft ${
+                        selectedObjective === obj.id
+                          ? "border-primary bg-sage-light shadow-soft"
+                          : "border-border/60 bg-background hover:border-sage-medium"
+                      }`}
+                    >
+                      {selectedObjective === obj.id && (
+                        <CheckCircle2 className="absolute top-2 right-2 h-5 w-5 text-primary" />
+                      )}
+                      <span className="text-2xl block mb-1">{obj.emoji}</span>
+                      <span className="text-sm font-medium">{obj.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="space-y-2">
+                <Label htmlFor="mensagem" className="text-base font-medium">
+                  Quer contar mais? (opcional)
+                </Label>
+                <Textarea
+                  id="mensagem"
+                  placeholder="Conte um pouco sobre você, seus desafios ou dúvidas..."
+                  value={formData.mensagem}
+                  onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
+                  className="min-h-[120px] rounded-xl border-border/60 bg-background focus:border-primary resize-none"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <Button type="submit" variant="hero" size="xl" className="w-full group">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Enviar e Conversar no WhatsApp
+                <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+
+              <p className="text-center text-sm text-muted-foreground">
+                🔒 Seus dados estão seguros e não serão compartilhados.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactForm;
