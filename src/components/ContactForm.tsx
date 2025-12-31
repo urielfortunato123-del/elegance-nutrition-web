@@ -66,8 +66,13 @@ Gostaria de saber mais sobre o acompanhamento nutricional!`;
   };
 
   return (
-    <section id="cadastro" className="py-24 bg-sage-light/50">
-      <div className="container mx-auto px-4">
+    <section id="cadastro" className="py-24 bg-card relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent/5 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12 space-y-4">
@@ -77,7 +82,7 @@ Gostaria de saber mais sobre o acompanhamento nutricional!`;
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-semibold">
               Vamos{" "}
-              <span className="text-gradient-gold italic">Conversar?</span>
+              <span className="text-gradient">Conversar?</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Preencha o formulário abaixo e você será redirecionado para o WhatsApp 
@@ -86,12 +91,12 @@ Gostaria de saber mais sobre o acompanhamento nutricional!`;
           </div>
 
           {/* Form Card */}
-          <div className="bg-card rounded-3xl shadow-elevated p-8 md:p-12 border border-border/50">
+          <div className="bg-background rounded-3xl shadow-elevated p-8 md:p-12 border border-border/50">
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Personal Info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="nome" className="text-base font-medium">
+                  <Label htmlFor="nome" className="text-base font-medium text-foreground">
                     Seu Nome *
                   </Label>
                   <Input
@@ -99,11 +104,11 @@ Gostaria de saber mais sobre o acompanhamento nutricional!`;
                     placeholder="Como posso te chamar?"
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                    className="h-12 rounded-xl border-border/60 bg-background focus:border-primary"
+                    className="h-12 rounded-xl border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="telefone" className="text-base font-medium">
+                  <Label htmlFor="telefone" className="text-base font-medium text-foreground">
                     WhatsApp *
                   </Label>
                   <Input
@@ -111,14 +116,14 @@ Gostaria de saber mais sobre o acompanhamento nutricional!`;
                     placeholder="(00) 00000-0000"
                     value={formData.telefone}
                     onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
-                    className="h-12 rounded-xl border-border/60 bg-background focus:border-primary"
+                    className="h-12 rounded-xl border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary"
                   />
                 </div>
               </div>
 
               {/* Objectives Selection */}
               <div className="space-y-4">
-                <Label className="text-base font-medium">
+                <Label className="text-base font-medium text-foreground">
                   Qual seu principal objetivo? *
                 </Label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -127,17 +132,17 @@ Gostaria de saber mais sobre o acompanhamento nutricional!`;
                       key={obj.id}
                       type="button"
                       onClick={() => handleObjectiveSelect(obj.id, obj.label)}
-                      className={`relative p-4 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-soft ${
+                      className={`relative p-4 rounded-xl border-2 text-left transition-all duration-300 ${
                         selectedObjective === obj.id
-                          ? "border-primary bg-sage-light shadow-soft"
-                          : "border-border/60 bg-background hover:border-sage-medium"
+                          ? "border-primary bg-primary/10 shadow-glow"
+                          : "border-border bg-card hover:border-primary/50"
                       }`}
                     >
                       {selectedObjective === obj.id && (
                         <CheckCircle2 className="absolute top-2 right-2 h-5 w-5 text-primary" />
                       )}
                       <span className="text-2xl block mb-1">{obj.emoji}</span>
-                      <span className="text-sm font-medium">{obj.label}</span>
+                      <span className="text-sm font-medium text-foreground">{obj.label}</span>
                     </button>
                   ))}
                 </div>
@@ -145,7 +150,7 @@ Gostaria de saber mais sobre o acompanhamento nutricional!`;
 
               {/* Message */}
               <div className="space-y-2">
-                <Label htmlFor="mensagem" className="text-base font-medium">
+                <Label htmlFor="mensagem" className="text-base font-medium text-foreground">
                   Quer contar mais? (opcional)
                 </Label>
                 <Textarea
@@ -153,7 +158,7 @@ Gostaria de saber mais sobre o acompanhamento nutricional!`;
                   placeholder="Conte um pouco sobre você, seus desafios ou dúvidas..."
                   value={formData.mensagem}
                   onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
-                  className="min-h-[120px] rounded-xl border-border/60 bg-background focus:border-primary resize-none"
+                  className="min-h-[120px] rounded-xl border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary resize-none"
                 />
               </div>
 
