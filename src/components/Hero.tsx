@@ -48,13 +48,6 @@ const Hero = () => {
 
           {/* Content Side */}
           <div className="relative z-10 space-y-6 lg:space-y-8 order-2 lg:order-1 lg:pr-8 text-center lg:text-left">
-            {/* CRN Badge */}
-            <div className="animate-fade-up">
-              <span className="inline-block text-sm font-medium text-accent uppercase tracking-wider">
-                CRN: XXXXX
-              </span>
-            </div>
-
             {/* Main Headline */}
             <div className="space-y-3 lg:space-y-4">
               <p className="animate-fade-up font-display text-2xl sm:text-3xl text-muted-foreground">
