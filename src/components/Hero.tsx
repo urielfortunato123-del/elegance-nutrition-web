@@ -38,8 +38,8 @@ const Hero = () => {
                 className="w-[220px] h-[300px] sm:w-[280px] sm:h-[380px] md:w-[350px] md:h-[480px] lg:w-[400px] lg:h-[550px] xl:w-[450px] xl:h-[600px] object-cover object-top rounded-t-full shadow-elevated"
               />
               
-              {/* Floating badge - adjusted for mobile */}
-              <div className="absolute -left-2 sm:-left-4 bottom-16 sm:bottom-24 lg:bottom-32 bg-card/95 backdrop-blur-sm border border-primary/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-card animate-float">
+              {/* Floating badge - positioned higher and more to the left */}
+              <div className="absolute -left-8 sm:-left-12 lg:-left-16 top-1/3 sm:top-1/4 bg-card/95 backdrop-blur-sm border border-primary/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-card animate-float">
                 <p className="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-primary">+500</p>
                 <p className="text-xs sm:text-sm text-muted-foreground">Vidas Transformadas</p>
               </div>
