@@ -1,4 +1,5 @@
 import { Award, GraduationCap, Heart } from "lucide-react";
+import erikaPhoto from "@/assets/erika-passos.jpg";
 
 const About = () => {
   return (
@@ -8,19 +9,11 @@ const About = () => {
           {/* Image Side */}
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-sage-light via-cream to-gold-light overflow-hidden shadow-elevated">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 rounded-full bg-primary/10 mx-auto mb-6 flex items-center justify-center">
-                    <Heart className="h-16 w-16 text-primary" />
-                  </div>
-                  <p className="font-display text-2xl text-muted-foreground italic">
-                    Sua foto aqui
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    (Substitua pela foto da nutricionista)
-                  </p>
-                </div>
-              </div>
+              <img 
+                src={erikaPhoto} 
+                alt="Erika Passos - Nutricionista" 
+                className="w-full h-full object-cover object-center"
+              />
             </div>
             
             {/* Floating Card */}
