@@ -31,7 +31,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="font-display text-2xl font-semibold text-foreground">
-            Nutri<span className="text-primary">.</span>
+            Erika Passos<span className="text-primary">.</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -51,7 +51,7 @@ const About = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Sou nutricionista apaixonada por ajudar pessoas a conquistarem uma 
+              Sou Erika Passos, nutricionista apaixonada por ajudar pessoas a conquistarem uma 
               relação saudável e prazerosa com a alimentação. Acredito que cada 
               pessoa é única e merece um atendimento personalizado.
             </p>
