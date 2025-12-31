@@ -21,7 +21,7 @@ const About = () => {
             </div>
             
             {/* Floating Card */}
-            <div className="absolute bottom-8 sm:bottom-10 lg:bottom-12 -right-2 sm:-right-4 bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card border border-primary/20">
+            <div className="absolute bottom-2 sm:bottom-4 lg:bottom-6 -right-2 sm:-right-4 bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card border border-primary/20">
               <div className="flex items-center gap-3 sm:gap-4">
                 <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-rose-light">
                   <Award className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
