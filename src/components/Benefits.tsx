@@ -1,73 +1,66 @@
-import { Leaf, Heart, Scale, Utensils, Sparkles, Clock } from "lucide-react";
-
-const benefits = [
-  {
-    icon: Scale,
-    title: "Emagrecimento Saudável",
-    description: "Perca peso de forma sustentável, sem dietas restritivas ou efeito sanfona.",
-  },
-  {
-    icon: Heart,
-    title: "Saúde do Coração",
-    description: "Melhore seus indicadores de saúde cardiovascular com alimentação adequada.",
-  },
-  {
-    icon: Utensils,
-    title: "Reeducação Alimentar",
-    description: "Aprenda a fazer escolhas inteligentes para uma vida mais saudável.",
-  },
-  {
-    icon: Leaf,
-    title: "Alimentação Natural",
-    description: "Priorize alimentos reais e nutritivos no seu dia a dia.",
-  },
-  {
-    icon: Sparkles,
-    title: "Mais Energia",
-    description: "Sinta-se mais disposto e produtivo com a nutrição certa.",
-  },
-  {
-    icon: Clock,
-    title: "Resultados Duradouros",
-    description: "Conquiste mudanças que permanecem para a vida toda.",
-  },
-];
+import { Apple, Heart, Sparkles } from "lucide-react";
 
 const Benefits = () => {
+  const pillars = [
+    {
+      icon: Apple,
+      title: "Alimentação",
+      description: "Planos alimentares práticos e saborosos, adaptados à sua rotina e preferências pessoais.",
+    },
+    {
+      icon: Heart,
+      title: "Bem-estar",
+      description: "Foco na sua saúde integral, equilibrando corpo e mente para resultados duradouros.",
+    },
+    {
+      icon: Sparkles,
+      title: "Transformação",
+      description: "Acompanhamento contínuo para você conquistar e manter seus objetivos de forma sustentável.",
+    },
+  ];
+
   return (
-    <section id="beneficios" className="py-24 bg-gradient-card">
+    <section id="beneficios" className="py-16 md:py-24 bg-card relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">
-            Por que escolher
+        <div className="text-center mb-10 md:mb-16 space-y-3 md:space-y-4">
+          <span className="text-sm font-medium text-primary uppercase tracking-wider">
+            Minha Metodologia
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold">
-            Benefícios do{" "}
-            <span className="text-gradient italic">Acompanhamento</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold px-2">
+            Seu acompanhamento será baseado em{" "}
+            <span className="text-gradient">3 pilares</span> principais
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Uma nutrição adequada transforma não apenas seu corpo, mas toda sua qualidade de vida.
-          </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {benefits.map((benefit, index) => (
+        {/* Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
+          {pillars.map((pillar, index) => (
             <div
-              key={benefit.title}
-              className="group p-8 rounded-2xl bg-card border border-border/50 shadow-soft hover:shadow-card transition-all duration-500 hover:-translate-y-1"
-              style={{ animationDelay: `${index * 100}ms` }}
+              key={index}
+              className="group relative bg-background/50 border border-border/50 rounded-2xl md:rounded-3xl p-6 md:p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-glow"
             >
-              <div className="mb-6 inline-flex p-4 rounded-xl bg-sage-light group-hover:bg-primary/10 transition-colors duration-300">
-                <benefit.icon className="h-7 w-7 text-primary" />
+              {/* Icon */}
+              <div className="mb-4 md:mb-6 inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                <pillar.icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
-              <h3 className="font-display text-xl font-semibold mb-3">
-                {benefit.title}
+
+              {/* Content */}
+              <h3 className="font-display text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-foreground group-hover:text-primary transition-colors">
+                {pillar.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {benefit.description}
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                {pillar.description}
               </p>
+
+              {/* Decorative number */}
+              <div className="absolute top-4 md:top-6 right-4 md:right-6 font-display text-5xl md:text-6xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
+                0{index + 1}
+              </div>
             </div>
           ))}
         </div>
