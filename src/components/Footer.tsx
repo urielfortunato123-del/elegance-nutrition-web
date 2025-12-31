@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="font-display text-2xl font-semibold">Nutricionista</h3>
+            <h3 className="font-display text-2xl font-semibold">Erika Passos</h3>
             <p className="text-primary-foreground/70 leading-relaxed">
-              Transformando vidas através da nutrição consciente e personalizada.
+              Nutricionista transformando vidas através da nutrição consciente e personalizada.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
               >
                 <Instagram className="h-4 w-4" />
-                @nutricionista
+                @erikapassosnutri
               </a>
             </div>
           </div>
@@ -65,7 +65,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/60">
-            © {new Date().getFullYear()} Nutricionista. Todos os direitos reservados.
+            © {new Date().getFullYear()} Erika Passos Nutricionista. Todos os direitos reservados.
           </p>
           <p className="text-sm text-primary-foreground/60 flex items-center gap-1">
             Feito com <Heart className="h-4 w-4 text-accent fill-accent" /> para você
