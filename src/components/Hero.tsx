@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, MessageCircle } from "lucide-react";
-import erikaPhoto from "@/assets/erika-passos.jpg";
+import erikaPhoto from "@/assets/erika-hero.png";
 
 const Hero = () => {
   const scrollToForm = () => {
