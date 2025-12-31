@@ -69,17 +69,17 @@ Aguardo seu retorno! 💚`;
   };
 
   return (
-    <section id="cadastro" className="py-16 md:py-24 bg-card relative overflow-hidden">
+    <section id="cadastro" className="py-16 md:py-24 bg-rose-light/30 relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       <div className="absolute top-20 left-10 w-32 md:w-64 h-32 md:h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 right-10 w-24 md:w-48 h-24 md:h-48 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-24 md:w-48 h-24 md:h-48 bg-sage-light/50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-8 md:mb-12 space-y-3 md:space-y-4">
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-primary uppercase tracking-wider">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-accent uppercase tracking-wider">
               <MessageCircle className="h-4 w-4" />
               Comece sua Transformação
             </span>
@@ -94,7 +94,7 @@ Aguardo seu retorno! 💚`;
           </div>
 
           {/* Form Card */}
-          <div className="bg-background rounded-2xl md:rounded-3xl shadow-elevated p-6 sm:p-8 md:p-12 border border-border/50">
+          <div className="bg-card rounded-2xl md:rounded-3xl shadow-elevated p-6 sm:p-8 md:p-12 border border-border/50">
             <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
               {/* Personal Info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -107,7 +107,7 @@ Aguardo seu retorno! 💚`;
                     placeholder="Como posso te chamar?"
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                    className="h-11 sm:h-12 rounded-lg sm:rounded-xl border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary"
+                    className="h-11 sm:h-12 rounded-lg sm:rounded-xl border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -119,7 +119,7 @@ Aguardo seu retorno! 💚`;
                     placeholder="(00) 00000-0000"
                     value={formData.telefone}
                     onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
-                    className="h-11 sm:h-12 rounded-lg sm:rounded-xl border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary"
+                    className="h-11 sm:h-12 rounded-lg sm:rounded-xl border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-primary"
                   />
                 </div>
               </div>
@@ -137,8 +137,8 @@ Aguardo seu retorno! 💚`;
                       onClick={() => handleObjectiveSelect(obj.id, obj.label)}
                       className={`relative p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 text-left transition-all duration-300 ${
                         selectedObjective === obj.id
-                          ? "border-primary bg-primary/10 shadow-glow"
-                          : "border-border bg-card hover:border-primary/50"
+                          ? "border-primary bg-rose-light shadow-soft"
+                          : "border-border bg-background hover:border-primary/50"
                       }`}
                     >
                       {selectedObjective === obj.id && (
@@ -161,14 +161,14 @@ Aguardo seu retorno! 💚`;
                   placeholder="Conte um pouco sobre você, seus desafios ou dúvidas..."
                   value={formData.mensagem}
                   onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
-                  className="min-h-[100px] sm:min-h-[120px] rounded-lg sm:rounded-xl border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary resize-none"
+                  className="min-h-[100px] sm:min-h-[120px] rounded-lg sm:rounded-xl border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-primary resize-none"
                 />
               </div>
 
               {/* Submit Button */}
               <Button type="submit" variant="hero" size="xl" className="w-full group text-sm sm:text-base">
                 <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Enviar e Conversar no WhatsApp
+                Agende sua Consulta
                 <Send className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
 
