@@ -53,8 +53,8 @@ Gostaria de saber mais sobre como funciona o seu acompanhamento nutricional e co
 
 Aguardo seu retorno! 💚`;
 
-    // Replace with the actual WhatsApp number
-    const whatsappNumber = "5511999999999"; // SUBSTITUA PELO NÚMERO REAL DA ERIKA
+    // WhatsApp da Erika Passos
+    const whatsappNumber = "5588920007220";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     toast({
