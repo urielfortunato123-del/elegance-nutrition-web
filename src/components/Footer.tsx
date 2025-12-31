@@ -48,13 +48,13 @@ const Footer = () => {
                 (88) 92000-7220
               </a>
               <a 
-                href="https://instagram.com/erikapassosnutri"
+                href="https://instagram.com/nutri_erikaps"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm md:text-base text-muted-foreground hover:text-primary transition-colors"
               >
                 <Instagram className="h-4 w-4" />
-                @erikapassosnutri
+                @nutri_erikaps
               </a>
             </div>
           </div>
