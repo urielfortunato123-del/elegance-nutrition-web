@@ -1,8 +1,8 @@
-import { Heart, Instagram, Mail, Phone } from "lucide-react";
+import { Heart, Instagram, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-12 md:py-16 bg-background border-t border-border/30">
+    <footer className="py-12 md:py-16 bg-card border-t border-border/30">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Brand */}
@@ -20,10 +20,13 @@ const Footer = () => {
             <h4 className="font-medium text-base md:text-lg text-foreground">Navegação</h4>
             <nav className="flex flex-col gap-2">
               <a href="#beneficios" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                Benefícios
+                Metodologia
               </a>
               <a href="#sobre" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
                 Sobre
+              </a>
+              <a href="#depoimentos" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+                Depoimentos
               </a>
               <a href="#cadastro" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
                 Agendar Consulta

@@ -22,13 +22,13 @@ const Benefits = () => {
   return (
     <section id="beneficios" className="py-16 md:py-24 bg-card relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-16 space-y-3 md:space-y-4">
-          <span className="text-sm font-medium text-primary uppercase tracking-wider">
+          <span className="text-sm font-medium text-accent uppercase tracking-wider">
             Minha Metodologia
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold px-2">
@@ -42,10 +42,10 @@ const Benefits = () => {
           {pillars.map((pillar, index) => (
             <div
               key={index}
-              className="group relative bg-background/50 border border-border/50 rounded-2xl md:rounded-3xl p-6 md:p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-glow"
+              className="group relative bg-background border border-border/50 rounded-2xl md:rounded-3xl p-6 md:p-8 hover:border-primary/30 transition-all duration-500 hover:shadow-card"
             >
               {/* Icon */}
-              <div className="mb-4 md:mb-6 inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+              <div className="mb-4 md:mb-6 inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-rose-light border border-primary/20 group-hover:bg-primary/20 transition-colors">
                 <pillar.icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
 
