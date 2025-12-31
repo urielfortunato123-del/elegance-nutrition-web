@@ -42,16 +42,19 @@ const ContactForm = () => {
     }
 
     // Format message for WhatsApp
-    const message = `Olá! Meu nome é ${formData.nome}.
+    const message = `Oii Erika! Tudo bem? 😊
 
-📋 *Meu objetivo:* ${formData.objetivo}
+Meu nome é *${formData.nome}* e encontrei seu site!
 
-${formData.mensagem ? `💬 *Mensagem:* ${formData.mensagem}` : ""}
+🎯 *Meu objetivo principal:* ${formData.objetivo}
+${formData.mensagem ? `\n💬 *Um pouco sobre mim:* ${formData.mensagem}` : ""}
 
-Gostaria de saber mais sobre o acompanhamento nutricional!`;
+Gostaria de saber mais sobre como funciona o seu acompanhamento nutricional e como podemos começar minha transformação! 🌟
+
+Aguardo seu retorno! 💚`;
 
     // Replace with the actual WhatsApp number
-    const whatsappNumber = "5511999999999"; // SUBSTITUA PELO NÚMERO REAL
+    const whatsappNumber = "5511999999999"; // SUBSTITUA PELO NÚMERO REAL DA ERIKA
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     toast({
