@@ -1,5 +1,5 @@
 import { Award, GraduationCap, Heart } from "lucide-react";
-import erikaPhoto from "@/assets/erika-passos.jpg";
+import erikaPhoto from "@/assets/erika-profissional.png";
 
 const About = () => {
   return (
